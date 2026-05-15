@@ -1,99 +1,153 @@
-  Avaliação de Programação do Sergio
+  # 📈 Análise Comparativa de Ações Brasileiras
 
- Sobre o Projeto
-Este repositório contém a resolução de 4 exercícios práticos utilizando Python.  
-O objetivo é aplicar conceitos fundamentais de programação, como:
+## 📌 Sobre o Projeto
 
-- Estruturas condicionais (if, elif, else)
-- Laços de repetição (for)
-- Manipulação de listas
-- Cálculos e análise de dados
+Este projeto realiza uma análise financeira de importantes ações brasileiras utilizando Python e dados do Yahoo Finance.
 
+O objetivo é demonstrar como coletar, processar, analisar e visualizar dados históricos do mercado financeiro de forma prática.
 
- Estrutura do Projeto
+As análises foram desenvolvidas em um notebook Jupyter (`AdminAnáliseAções.ipynb`) e contemplam o período de:
 
-avaliacao-python/
-├── q1_temperaturas.ipynb  
-├── q2_notas.ipynb  
-├── q3_energia.ipynb  
-├── q4_compras.ipynb  
-└── README.md  
-
-
-
-  Descrição das Questões
-
-  Questão 1 — Classificação de Temperaturas
-- Classifica temperaturas em:
-  - Frio (< 20°C)
-  - Agradável (20°C a 30°C)
-  - Quente (> 30°C)
-- Conta quantos dias existem em cada categoria
-
-
- Questão 2 — Sistema de Avaliação de Alunos
-- Classifica notas em:
-  - Reprovado (< 5)
-  - Recuperação (5 a 7)
-  - Aprovado (> 7)
-- Calcula:
-  - Quantidade de alunos aprovados
-  - Percentual de alunos reprovados
-
-
-
- Questão 3 — Monitoramento de Energia
-- Classifica consumo em:
-  - Baixo (< 100 kWh)
-  - Moderado (100 a 180 kWh)
-  - Alto (> 180 kWh)
-- Calcula:
-  - Consumo total da semana
-  - Média semanal
-- Exibe alerta se houver mais de 2 dias com consumo alto
-
-
-
- 🔹 Questão 4 — Carrinho de Compras
-- Aplica descontos conforme o valor:
-  - < R$50 → 5%
-  - R$50 a R$150 → 10%
-  - > R$150 → 15%
-- Calcula:
-  - Valor total com desconto
-  - Economia total
-
-
-
-- Como Executar
-
- Google Colab
-1. Acesse: https://colab.research.google.com/
-2. Clique em "Upload"
-3. Envie os arquivos .ipynb
-4. Execute as células
+> **Janeiro de 2023 até Maio de 2026**
 
 ---
 
- Local (Python)
+# 🏢 Empresas Analisadas
 
-1. Instale o Jupyter:
-pip install notebook
+| Empresa         | Ticker   |
+| --------------- | -------- |
+| Petrobras       | PETR4.SA |
+| Ambev           | ABEV3.SA |
+| Itaú Unibanco   | ITUB4.SA |
+| Vale S.A.       | VALE3.SA |
+| Banco do Brasil | BBAS3.SA |
 
-2. Execute:
-jupyter notebook
+---
 
-3. Abra os arquivos .ipynb
+# 🎯 Objetivos da Análise
 
+Para cada empresa, o projeto busca:
 
+* Baixar dados históricos da bolsa
+* Organizar os dados em DataFrames
+* Calcular métricas financeiras
+* Visualizar tendências de preço
+* Comparar desempenho entre empresas
+* Identificar possíveis padrões de mercado
 
- Tecnologias Utilizadas
+---
 
-- Python 3
-- Jupyter Notebook / Google Colab
+# 🛠️ Tecnologias Utilizadas
 
+As seguintes bibliotecas Python foram utilizadas:
 
+```python
+pip install yfinance pandas matplotlib seaborn
+```
 
- Autor
+## Bibliotecas
 
+* `yfinance` → Download de dados financeiros
+* `pandas` → Manipulação de dados
+* `matplotlib` → Criação de gráficos
+* `seaborn` → Estilização visual
+
+---
+
+# 📂 Estrutura do Projeto
+
+```bash
+.
+├── AdminAnáliseAções.ipynb
+└── README.md
+```
+
+---
+
+# ▶️ Como Executar
+
+## 1. Clone o repositório
+
+```bash
+git clone <URL_DO_REPOSITORIO>
+```
+
+## 2. Instale as dependências
+
+```bash
+pip install yfinance pandas matplotlib seaborn
+```
+
+## 3. Execute o notebook
+
+Abra o arquivo `.ipynb` no:
+
+* Jupyter Notebook
+* Google Colab
+* VS Code
+
+---
+
+# 📊 Exemplo de Código
+
+```python
+import yfinance as yf
+
+# Definindo ticker
+ticker = "PETR4.SA"
+
+# Baixando dados
+acao = yf.download(ticker, start="2023-01-01", end="2026-05-14")
+
+print(acao.head())
+```
+
+---
+
+# 📈 Visualizações
+
+O projeto utiliza gráficos para:
+
+* Evolução do preço das ações
+* Volume de negociação
+* Médias móveis
+* Comparações entre ativos
+
+---
+
+# 📚 Conceitos Aplicados
+
+Durante a análise são aplicados conceitos de:
+
+* Mercado financeiro
+* Análise de ações
+* Ciência de dados
+* Visualização de dados
+* Estatística básica
+* Python para finanças
+
+---
+
+# ⚠️ Observações
+
+Os dados são obtidos diretamente do Yahoo Finance e podem sofrer alterações ao longo do tempo.
+
+Este projeto possui finalidade educacional e acadêmica.
+
+---
+
+# 👨‍💻 Autor
+
+Projeto desenvolvido por Ângelo Raphael.
+
+---
+
+# ⭐ Possíveis Melhorias Futuras
+
+* Dashboard interativo
+* Comparação automática entre ativos
+* Indicadores técnicos
+* Machine Learning para previsão
+* Exportação automática de relatórios
+* Integração com APIs financeiras
 
